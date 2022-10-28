@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:p="http://primefaces.org/ui">
+ <h:head></h:head>
+ <h:body style="background: rgb(186, 228, 229); display:flex; justify-content: center; align-items:center; height: 100vh; font-family: sans-serif; ">
+    <h:form id="guess_form" style="display:flex; flex-direction: column; width: 250px; height:250px; justify-content: space-between; background-color: rgba(255,255,255, 0.6); border: 2px solid #2196f3; border-radius: 25px; padding: 15px;">
+        <p:outputLabel style="display:none;" value="#{guessBean.guessingNumer}"></p:outputLabel>
+        <p:inputText placeholder="Number to try" value="#{guessBean.currentTry}"></p:inputText>
+        <p:outputLabel value="Tries: #{guessBean.tries}"></p:outputLabel>
+        <p:outputLabel value="Game State: #{guessBean.gameState}"></p:outputLabel>
+        <p:outputLabel value="Prize: #{guessBean.currentPrize}"></p:outputLabel>
+        <p:commandButton update="guess_form" actionListener="#{guessBean.guess}" value="MAKE GUESS"></p:commandButton>
+        <p:commandButton update="guess_form" actionListener="#{guessBean.restart}" value="RESTART GAME"></p:commandButton>
+    </h:form>
+ </h:body>
+</html>
